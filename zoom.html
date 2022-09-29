@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="zoomC"></div>
+
+    <style>
+        #zoomC {
+            width: 600px;
+            height: 338px;
+            background: url("images/3.webp");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+
+        }
+    </style>
+    <script>
+        var addZoom = (target) => {
+            let container = document.getElementById(target);
+            let imgsrc = container.currentStyle || window.getComputedStyle(container, false);
+            imgsrc = imgsrc.backgroundImage.slice(4, -1).replace(/"/g, "");
+            let ratio
+
+            let img = new Image();
+            img.src = imgsrc;
+            img.onload = () => {
+                ratio = img.naturalHeight / img.naturalWidth,
+                    percentage = ratio * 100 + "%";
+            }
+            container.onmousemove = (e) => {
+                let react = e.target.getBoundingClientRect(),
+                    xPos = e.clientX - react.left,
+                    yPos = e.clientY - react.top,
+                    xPercent = xPos / (container.clientWidth / 100) + "%",
+                    yPercent = yPos / ((container.clientWidth) * ratio / 100) + "%";
+
+                Object.assign(container.style, {
+                    backgroundPosition: xPercent ,
+                    backgroundSize: img.naturalWidth + "px"
+                })
+            };
+
+            container.onmouseleave = (e) => {
+                Object.assign(container.style, {
+                    backgroundPosition: "center",
+                    backgroundSize: "cover"
+                })
+            }
+        };
+
+        // (C) ATTACH FOLLOW ZOOM
+        window.onload = () => { addZoom("zoomC"); };
+    </script>
+</body>
+
+</html>

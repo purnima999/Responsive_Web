@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.blog-container .container {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.blog-container #blog-heading {
+    padding: 50px 0px 130px 0px;
+    color: #FFFFFF;
+    font-family: "Roboto", Sans-serif;
+    font-size: 39px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.blog-container .blog-container-section2 {
+    padding: 50px 100px 100px 100px
+}
+
+.blog-container .blog-container-section2 #col {
+    margin-bottom: 7px;
+    padding: 7px 7px 7px 7px;
+}
+
+.blog-container .cardimg {
+    width: 100%;
+    height: auto;
+    transition: 0.5s all ease-in-out;
+}
+
+.blog-container #outer-card {
+    background-color: #F5F0F0;
+    border: none;
+    border-radius: 0px;
+}
+
+.blog-container #inner-card {
+    height: 313.385px;
+    top: -60px;
+    margin: 0px 10px 0px;
+    clear: both;
+    border: none;
+    border-radius: 0px;
+    text-align: left;
+    padding: 30px;
+}
+
+.blog-container .card-tittle {
+    margin-bottom: 12px;
+}
+
+.blog-container .card-tittle a {
+    font-size: 19px;
+    color: #0A0B0C;
+    font-family: "Rubik", Sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.blog-container .card-date {
+    color: #625A5A;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.blog-container .card-text {
+    font-size: 13px;
+    color: #4E4D4D;
+    line-height: 1.5em;
+    margin-bottom: 10px;
+}
+
+.blog-container button {
+    color: #00A437;
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    border-radius: 7px;
+    padding: 10px 10px 10px 10px;
+    border-color: #00A437;
+    background-color: transparent;
+    max-width: 70%;
+    font-size: 15px;
+}
+
+@media (max-width: 767px) {
+    .blog-container .blog-container-section2 {
+        padding: 0px;
+    }
+
+    .blog-container .container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .blog-container #inner-card {
+        height: 267.188px;
+        top: -34px;
+        margin: 0 10px 20px;
+        clear: both;
+        padding: 30px;
+    }
+
+    .blog-container button {
+        max-width: 30%;
+        padding: 8px;
+    }
+}
+
+@media (max-width:480px) {
+    .blog-container button {
+        max-width: 40%;
+        padding: 8px;
+    }
+}
+
+@media (max-width:380px) {
+    .blog-container button {
+        max-width: 50%;
+        padding: 5px;
+    }
+}

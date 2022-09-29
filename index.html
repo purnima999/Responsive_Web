@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Website</title>
+
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src='main.js'></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <!-- back to top button-start-->
+    <div>
+        <button onclick="topFunction()" id="backtotopbtn" title="Go to top"><i class="fa fa-angle-up"></i></button>
+    </div>
+    <script>
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+    <!-- back to top button-end -->
+
+    <header>
+        <nav class="navigationBar">
+            <div class="content">
+                <div class="logo">
+                    <img src="" alt="LOGO" />
+                    
+                </div>
+                <ul class="menu-list">
+                    <div class="icon" id="backButton">
+                        <i class="fas fa-times"></i>
+                        <h6>Back</h6>
+                    </div>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="myAccount.html">My Account</a></li>
+                    <li><a href="inquiry.html">Send inquiry</a></li>
+                    <li><a href="#"><i class="fa fa-search" aria-hidden="true" id="searchBtn"></i></a></li>
+                </ul>
+                <div class="icon menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="icon cancel-btn">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+        </nav>
+
+        <script>
+            const body = document.querySelector("body");
+            const navbar = document.querySelector(".navigationBar");
+            const menuBtn = document.querySelector(".menu-btn");
+            const cancelBtn = document.querySelector(".cancel-btn");
+            const backBtn = document.getElementById("backButton");
+            const searchIcon = document.querySelector(".fa-search");
+
+            cancelBtn.classList.add("hide");
+
+            menuBtn.onclick = () => {
+                navbar.classList.add("show");
+                menuBtn.classList.add("hide");
+                body.classList.add("disabled");
+                cancelBtn.classList.add("show");
+                searchIcon.style.display = "none"
+            }
+            cancelBtn.onclick = () => {
+                body.classList.remove("disabled");
+                navbar.classList.remove("show");
+                menuBtn.classList.remove("hide");
+                cancelBtn.classList.remove("show")
+            }
+            backBtn.onclick = () => {
+                body.classList.remove("disabled");
+                navbar.classList.remove("show");
+                menuBtn.classList.remove("hide");
+                cancelBtn.classList.remove("show");
+            }
+
+            window.onscroll = () => {
+                this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+                console.log("navbar.classList", navbar)
+            }
+        </script>
+    </header>
+
+    <!-- main start -->
+    <div class="main-container">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <article>
+                    <p>What Are You Looking For?</p>
+                    <form action="" class="main-container-action">
+                        <div class="row justify-content-center">
+                            <div class="col-0 " style="padding:0px 20px; background-color:white"
+                                id="main-container-dropdown">
+                                <select name="products" class="main-container-dropdown">
+                                    <option value="1">Categories</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </div>
+                            <div class="col-0 col-lg-6 col-md-6 col-sm-10 col-xs-2 ">
+                                <input type="search" placeholder="Search for Products.." class="main-container-search">
+                            </div>
+                            <div class="col-0 ">
+                                <button type="button" class="main-container-searchbtn"><a href="#"><i
+                                            class="fa fa-search" aria-hidden="true"></i></a></button>
+                            </div>
+                        </div>
+                    </form>
+                </article>
+            </div>
+        </div>
+    </div>
+    <!-- main end -->
+
+    <!-- section1 Start -->
+    <div class="section1-container">
+        <div class="container">
+            <div class="row">
+                <h2 class="col text-center font-weight-bold " id="container-fluid-heading">Why to Choose Us</h2>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="d-flex justify-content-center">
+                        <a href="/contact.html"><i class="fas fa-headset fa-3x"
+                                id="section1-container-headseticon"></i></a>
+                    </div>
+                    <h6 class="text-center font-weight-bold">Service1</h6>
+                    <div class="section1-container-headseaction-text">
+                       We provides best quality products with good customer services. We believe to give the
+                        best support to solve queries with our best expert's team.
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="d-flex justify-content-center">
+                        <a href="/contact.html"><i class="fa fa-star fa-3x" aria-hidden="true"
+                                id="section1-container-headseticon"></i></a>
+                    </div>
+                    <h6 class="text-center font-weight-bold">Service2</h6>
+                    <div class="section1-container-headseaction-text">
+                        We give the best quality products with good shipping and on time delivery. We also have
+                        verity of products for your requirements.
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="d-flex justify-content-center">
+                        <a href="/contact.html"><i class="fa fa-globe fa-3x" aria-hidden="true"
+                                id="section1-container-headseticon"></i></a>
+                    </div>
+                    <h6 class="text-center font-weight-bold">Service3</h6>
+                    <div class="section1-container-headseaction-text">
+                        With Global Support locations and services we delivery product globally at your place. We have
+                        good customer satisfaction with our product.
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="d-flex justify-content-center">
+                        <a href="/contact.html"><i class="fas fa-boxes fa-3x" aria-hidden="true"
+                                id="section1-container-headseticon"></i></a>
+                    </div>
+                    <h6 class="text-center font-weight-bold">Service4</h6>
+                    <div class="section1-container-headseaction-text">
+                        We give the best quality products with good shipping and on time delivery. We also have
+                        verity of products for your requirements.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- section1 End -->
+
+    <!-- section2-container-start -->
+    <div class="section2-container">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="section2-container-tittle">
+                    <p>Latest Products</p>
+                </div>
+            </div>
+            <div class="section2-container-grid">
+                <div class="row row-cols-5">
+                    <div class="col col-lg-3 col-md-6 col-sm-6 col-xs-6 " id="col">
+                        <a href="/product.html">
+                            <div class="card">
+                                <a href="singleproduct.html"><img src="./images/6.jpg" class="card-img-top"
+                                        alt=""></a>
+                                <div class="card-body">
+                                    <h6>Tittle</h6>
+                                    <a href="singleproduct.html">
+                                        <p class="card-text">Subtittle</p>
+                                    </a>
+                                    <p>$92.92</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col col-lg-3 col-md-6 col-sm-6 col-xs-6" id="col">
+                        <a href="">
+                            <div class="card">
+                                <a href="singleproduct.html"><img src="./images/6.jpg" class="card-img-top" alt=""></a>
+                                <div class="card-body">
+                                    <h6>Tittle</h6>
+                                    <a href="singleproduct.html">
+                                        <p class="card-text">Subtittle</p>
+                                    </a>
+                                    <p>$92.92</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col col-lg-3 col-md-6 col-sm-6 col-xs-6 " id="col">
+                        <div class="card">
+                            <a href="singleproduct.html"><img src="./images/6.jpg" class="card-img-top" alt=""></a>
+                            <div class="card-body">
+                                <h6>Tittle</h6>
+                                <a href="singleproduct.html">
+                                    <p class="card-text">Subtittle</p>
+                                </a>
+                                <p>$92.92</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-3 col-md-6 col-sm-6 col-xs-6 " id="col">
+                        <div class="card">
+                            <a href="singleproduct.html"><img src="./images/6.jpg" class="card-img-top" alt=""></a>
+                            <div class="card-body">
+                                <h6>Tittle</h6>
+                                <a href="singleproduct.html">
+                                    <p class="card-text">Subtittle</p>
+                                </a>
+                                <p>$92.92</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-3 col-md-6 col-sm-6 col-xs-6 " id="col">
+                        <div class="card">
+                            <a href="singleproduct.html"><img src="./images/6.jpg" class="card-img-top" alt=""></a>
+                            <div class="card-body">
+                                <h6>Tittle</h6>
+                                <a href="singleproduct.html">
+                                    <p class="card-text">Subtittle</p>
+                                </a>
+                                <p>$92.92</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-3 col-md-6 col-sm-6 col-xs-6 " id="col">
+                        <div class="card">
+                            <a href="singleproduct.html"><img src="./images/6.jpg" class="card-img-top"
+                                    alt=""></a>
+                            <div class="card-body">
+                                <h6>Tittle</h6>
+                                <a href="singleproduct.html">
+                                    <p class="card-text">Subtittle</p>
+                                </a>
+                                <p>$92.92</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-3 col-md-6 col-sm-6 col-xs-6 " id="col">
+                        <div class="card">
+                            <a href="singleproduct.html"><img src="./images/6.jpg" class="card-img-top" alt=""></a>
+                            <div class="card-body">
+                                <h6>Tittle</h6>
+                                <a href="singleproduct.html">
+                                    <p class="card-text">Subtittle</p>
+                                </a>
+                                <p>$92.92</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-3 col-md-6 col-sm-6 col-xs-6 " id="col">
+                        <div class="card">
+                            <a href="singleproduct.html"><img src="./images/6.jpg" class="card-img-top" alt=""></a>
+                            <div class="card-body">
+                                <h6>Tittle</h6>
+                                <a href="singleproduct.html">
+                                    <p class="card-text">Subtittle</p>
+                                </a>
+                                <p>$92.92</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- <div class=" col-lg-3 col-md-6 col-sm-6" id="col">
+                        <div class="card">
+                            <a href="singleproduct.html"><img src="/images/4.jpg" class="card-img-top" alt=""></a>
+                            <div class="card-body">
+                                <h6>Enclosures</h6>
+                                <a href="singleproduct.html">
+                                    <p class="card-text">SCGB-1-T-KT</p>
+                                </a>
+                                <p>$92.92</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-lg-3 col-md-6 col-sm-6" id="col">
+                        <a href="/product.html">
+                            <div class="card">
+                                <a href="singleproduct.html"><img src="/images/5.webp" class="card-img-top" alt=""></a>
+                                <div class="card-body">
+                                    <h6>Enclosures</h6>
+                                    <a href="singleproduct.html">
+                                        <p class="card-text">SCGB-1-T-KT</p>
+                                    </a>
+                                    <p>$92.92</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div> -->
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <a href="/product.html"><button type="button" class="section2-container-button">All
+                        Products</button></a>
+            </div>
+        </div>
+    </div>
+    <!-- section2-container-end -->
+
+    <!-- section3-container-start -->
+    <div class="section3-container">
+        <div class="section3-container-tittle">
+            <h5>Who We are</h5>
+        </div>
+        <div class="container-fluid">
+            <div class="row ">
+                <div class="col-lg-6 col-md-12 ">
+                    <div class="section3-container-leftimg">
+                        <img src="./images/6.jpg" alt="Snow" style="width:100%; height: 100%;">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12  " id="right-section">
+                    <div class="section3-container-right">
+                        <div class="row ">
+                            <div class="section3-container-right-text">
+                                <p><b>We</b> are a Middle East based <b>electronic goods distributor</b>
+                                    with satisfied clientele world over. Our aim has always been to deliver our customer
+                                    with the best of services. We take pride in our ability
+                                    to deliver our client with the most obsolete component’s which are not easily
+                                    available at the marketplace. We understand the goal & vision of our customer &
+                                    align our services towards achieving their goals which has
+                                    always helped us to fulfil the needs of our customer.</p>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center ">
+                            <a href="/about.html"><button type="button" class="section3-container-button">Read
+                                    More</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- section3-container-end -->
+
+    <!-- section4-container-start -->
+    <div class="section4-container">
+        <div class="section4-container-tittle">
+            <h2>Send Your Enquiry</h2>
+        </div>
+        <div class="container-fluid">
+            <div class="row ">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <!-- <div class="container"> -->
+                    <div class="section4-container-left-bgimage">
+                        <img src="/images/9.jpg" alt="Snow" style="width:100%; height: 100%;">
+                        <div class="section4-container-left-text">
+                            <h5>Looking for Specific Product</h5>
+                            <p>Didn’t find require part. Fill form to send your specific Part details. we will try to
+                                provide you as soon as possible</p>
+                        </div>
+                    </div>
+                    <!-- </div> -->
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12" id="section4-container-right-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Name" />
+                        </div>
+                        <div class=" form-group ">
+                            <input type="email " class="form-control " placeholder="Email " />
+                        </div>
+                        <div class=" form-group ">
+                            <input type="text " class="form-control " placeholder="Company Name " />
+                        </div>
+                        <div class=" form-group ">
+                            <input type="text " class="form-control " placeholder="Phone No." />
+                        </div>
+                        <div class=" form-group ">
+                            <input type="text " class="form-control " placeholder="Part#" />
+                        </div>
+                        <div class=" form-group ">
+                            <input type="text " class="form-control " placeholder="Manufacture" />
+                        </div>
+                        <div class=" form-group ">
+                            <input type="text " class="form-control " placeholder="Quantity" />
+                        </div>
+                        <div class="form-group ">
+                            <textarea class="form-control" style="height: 250px;"
+                                placeholder="anything you want to share.."></textarea>
+                        </div>
+                        <button type="submit " class="submitbtn ">Send Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- section4-container-end -->
+
+    <!-- section5-container-start -->
+    <div class="section5-container">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <p class="section-5container-header">Recent Articles & News</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="card" style="border: none; border-radius:10px">
+                        <img src="./images/7.jpg" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <p class="card-text">The best Accessories for your Raspberry Pi</p>
+                            <a href="#" class="readmorebtn">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="card" style="border: none; border-radius:10px">
+                        <img src="./images/8.jpg" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <p class="card-text">Artificial intelligence Expands Role in Design</p>
+                            <a href="#" class="readmorebtn">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="card" style="border: none; border-radius:10px">
+                        <img src="./images/9.jpg" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <p class="card-text">Less expensive Way To Make Flexible Semiconductors?</p>
+                            <a href="#" class="readmorebtn">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="card" style="border: none; border-radius:10px">
+                        <img src="./images/10.jpg" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <p class="card-text"> IoT Rolls Up its Sleeves</p>
+                            <a href="#" class="readmorebtn" style="border: none;">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- section5-container-end -->
+
+    <!-- footer start -->
+
+    <div class="footer-container">
+        <footer class="">
+
+            <!-- Section: Links  -->
+            <!-- About section  -->
+            <section class="container-fluid" id=" footer-container-section-links">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-12 text-center" style="padding: 10px;">
+                        <p class="footer-container-headings">about us</p>
+                        <a class="navbar-brand" href="#">
+                            <img class="footer-logo" src="" alt="logo">
+                        </a>
+                        <div class="footer-container-text">
+                            We are Middle East based electronic goods distributor with satisfied clientele
+                            world over.
+                        </div>
+                    </div>
+
+                    <!-- QUICK LINKS SECTION-->
+                    <div class="col-lg-4 col-md-4 col-sm-12 text-left">
+                        <p class="footer-container-headings">quisk links</p>
+                        <ul style="list-style: none; padding-left: 0px; ">
+                            <li class="footer-container-quicklinks"><a href="">About</a></li>
+                            <li class="footer-container-quicklinks"><a href="">Career</a></li>
+                            <li class="footer-container-quicklinks"><a href="">Blog</a></li>
+                            <li class="footer-container-quicklinks"><a href="">Products</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- IMPORTANT LINKS SECTION-->
+                    <div class="col-lg-4 col-md-4 col-sm-12 float-lg-left">
+                        <p class="footer-container-headings">IMPORTANT links</p>
+                        <ul style="list-style: none; padding-left: 0px; ">
+                            <li class="footer-container-quicklinks"><a href="">My Account</a></li>
+                            <li class="footer-container-quicklinks"><a href="">Terms & Conditions</a></li>
+                            <li class="footer-container-quicklinks"><a href="">Privacy Policies</a></li>
+                            <li class="footer-container-quicklinks"><a href="">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- Section: Links  -->
+
+            <!-- Section: Social media -->
+            <section class="d-flex justify-content-between p-2 text-white" style="background-color: #16D0B0">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5 text-center" style="font-size:15px;">Copyright ©2020 us | All
+                            Rights Reserved
+                        </div>
+                        <div class="col-md-3 offset-md-4 text-center" style="float: right; font-size: 25px;">
+                            <div>
+                                <a href="" class="text-white me-5">
+                                    <i class="fab fa-facebook-f" style="padding: 0px 10px;"></i>
+                                </a>
+                                <a href="" class="text-white me-4">
+                                    <i class="fab fa-twitter" style="padding: 0px 10px;"></i>
+                                </a>
+                                <a href="" class="text-white me-4">
+                                    <i class="fab fa-youtube" style="padding: 0px 10px;"></i>
+                                </a>
+                                <a href="" class="text-white me-4">
+                                    <i class="fab fa-linkedin" style="padding: 0px 10px;"></i>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Section: Social media -->
+        </footer>
+        <!-- Footer -->
+    </div>
+</body>
+
+</html>

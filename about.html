@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About – Us</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/about.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='main.js'></script>
+
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+        
+    <!-- back to top button-start-->
+    <div>
+        <button onclick="topFunction()" id="backtotopbtn" title="Go to top"><i class="fa fa-angle-up"></i></button>
+    </div>
+    <script>
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+    <!-- back to top button-end -->
+
+    <header>
+        <nav class="navigationBar">
+            <div class="content">
+                <div class="logo">
+                    <img src="" alt="logo" />
+                </div>
+                <ul class="menu-list">
+                    <div class="icon" id="backButton">
+                        <i class="fas fa-times">back</i>
+                    </div>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="myAccount.html">My Account</a></li>
+                    <li><a href="inquiry.html">Send inquiry</a></li>
+                    <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                </ul>
+                <div class="icon menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="icon cancel-btn">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+        </nav>
+        <script>
+            const body = document.querySelector("body");
+            const navbar = document.querySelector(".navigationBar");
+            const menuBtn = document.querySelector(".menu-btn");
+            const cancelBtn = document.querySelector(".cancel-btn");
+            const backBtn = document.getElementById("backButton");
+            const searchIcon = document.querySelector(".fa-search");
+
+            cancelBtn.classList.add("hide");
+            searchIcon.classList.add("hide");
+            searchIcon.style.display = "none"
+
+            menuBtn.onclick = () => {
+                navbar.classList.add("show");
+                menuBtn.classList.add("hide");
+                body.classList.add("disabled");
+                cancelBtn.classList.add("show");
+            }
+            cancelBtn.onclick = () => {
+                body.classList.remove("disabled");
+                navbar.classList.remove("show");
+                menuBtn.classList.remove("hide");
+                cancelBtn.classList.remove("show")
+            }
+            backBtn.onclick = () => {
+                body.classList.remove("disabled");
+                navbar.classList.remove("show");
+                menuBtn.classList.remove("hide");
+                cancelBtn.classList.remove("show");
+            }
+
+            window.onscroll = () => {
+                this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+                console.log("navbar.classList", navbar)
+            }
+        </script>
+    </header>
+
+
+    <!-- about page -->
+
+
+    <div class="about-container">
+        <div class="bg-image-section1">
+            <div class="bg-image text-center shadow-1-strong rounded mb-5 text-white"
+                style="background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/003.webp');">
+                <h1 class="mb-3 h2" id="about-heading">About Us</h1>
+            </div>
+        </div>
+        <!-- section2 start -->
+
+        <div class="about-container-section2">
+            <div class="container-fluid text-center">
+                <div class="row" id="about-container-section2-details">
+                    <div class="col ">
+                        <div class="row" id="about-container-section2-tittle">
+                            <p>Who We Are?</p>
+                        </div>
+                        <div class="row" id="about-container-section2-text">
+                            <p>We are Middle East based electronic goods distributor with satisfied
+                                clientele world over. We have worked towards establishing ourselves as a reliable
+                                supplier of goods to our esteemed clients. Our Organization
+                                dedicates our success to our organizational motto </p>
+                        </div>
+                        <div class="row justify-content-center" id="about-container-section2-text">
+                            <img class="aboutImg" src="./images/about1.png" style="padding-bottom: 20px;" />
+                        </div>
+                        <div class="row" id="about-container-section2-text">
+                            <h6>Integrity</h6><br>
+                            <p>Our dedicated team works hard to ensure the customer has been fully satisfied with the
+                                services offered by our organization. Our service team not only restrict their services
+                                to just selling but they also work hard to ensure
+                                the vision of the client is being fulfilled.
+                            </p>
+                        </div>
+                        <div class="row" id="about-container-section2-text">
+                            <h6>Hard Work</h6><br>
+                            <p>Our dedicated team works hard to ensure the customer has been fully satisfied with the
+                                services offered by our organization. Our service team not only restrict their services
+                                to just selling but they also work hard to ensure
+                                the vision of the client is being fulfilled.
+                            </p>
+                        </div>
+                        <div class="row" id="about-container-section2-text">
+                            <h6>Adaptability</h6><br>
+                            <p>We take pride in the fact that we adopt the agile practices in our organizational
+                                processes & are hence able to adapt to the risks & demands of the marketplace. We not
+                                only are able to adapt to the requirements of the outside
+                                world but also to the demands & needs of the customer</p>
+                        </div>
+                        <div class="row" id="about-container-section2-text">
+                            <h6>Pursuit of Excellence</h6><br>
+                            <p>Our aim is to always pursue excellence in our work & this has helped us build a reliable
+                                client base over the period of practice in the market.</p>
+                        </div>
+                        <div class="row justify-content-center" id="about-container-section2-text">
+                            <img class="aboutImg" src="./images/about2.jpg" style="padding-bottom: 15px;" />
+                        </div>
+                        <div class="row" id="about-container-section2-text">
+                            <p> Our aim has always been to deliver our customer with the best of services. We take pride
+                                in our ability to deliver our client with the most obsolete component’s which are not
+                                easily available at the marketplace. We understand
+                                the goal & vision of our customer & align our services towards achieving their goals
+                                which has always helped us to fulfil the needs of our customer.</p>
+                        </div>
+                        <div class="row" id="about-container-section2-text">
+                            <p> Over the years of presence in the marketplace, we have been able to establish a reliable
+                                & robust supply chain network that helps us deliver the required commodities to the
+                                customer in the least possible time. Our state-of-the
+                                art Inventory management system enables us to be ready to fulfil the client orders in
+                                the shortest possible time. We believe customer satisfaction relies on three pillars &
+                                we ensure the customer is ensured of all three
+                                in the service provided by us</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- section2 end -->
+
+        <!-- section3 start -->
+        <div class="about-container-section3">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col">
+                        <div class="row" id="about-container-section3-tittle">
+                            <p>Our Mission</p>
+                        </div>
+                        <div class="row justify-content-center" id="">
+                            <img class="aboutImg" src="./images/about3.png" />
+                        </div>
+                        <div class="row" id="about-container-section3-text">
+                            <p>To be a reliable supplier of electronic components to industries world over whilst
+                                leveraging our robust supply chain & organizational motto’s</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="row" id="about-container-section3-tittle">
+                            <p>Our Vision</p>
+                        </div>
+                        <div class="row justify-content-center">
+                            <img class="aboutImg" src="./images/about4.png" />
+                        </div>
+                        <div class="row" id="about-container-section3-text">
+                            <p>To be a go-to name for all electronic firms worldwide & in turn be a contributing force
+                                in the advancement of technological practices & innovations through our services.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- section3 end -->
+
+        <!-- section4 start -->
+        <div class="about-container-section4">
+            <div class="container-fluid">
+                <div class="row justify-content-center" id="section4-tittle">
+                    Recent Articles & News
+                </div>
+                <div class="row" style="padding-bottom: 70px;">
+                    <div class="col col-lg-4">
+                        <div class="card" style="border: none; border-radius:10px">
+                            <img src="./images/8.jpg" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <p class="card-text">The best Accessories for your Raspberry Pi</p>
+                                <a href="#" class="readmorebtn">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-4">
+                        <div class="card" style="border: none; border-radius:10px">
+                            <img src="./images/9.jpg" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <p class="card-text">Artificial intelligence Expands Role in Design</p>
+                                <a href="#" class="readmorebtn">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-4">
+                        <div class="card" style="border: none; border-radius:10px">
+                            <img src="./images/10.jpg" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <p class="card-text">Less expensive Way To Make Flexible Semiconductors?</p>
+                                <a href="#" class="readmorebtn">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- section4 end -->
+    </div>
+    <!-- footer start -->
+
+    <div class="footer-container">
+        <footer class="">
+
+            <!-- Section: Links  -->
+            <!-- About section  -->
+            <section class="container-fluid" id=" footer-container-section-links">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-12 text-center" style="padding: 10px;">
+                        <p class="footer-container-headings">about us</p>
+                        <a class="navbar-brand" href="#">
+                            <img class="footer-logo" src="" alt="logo">
+                        </a>
+                        <div class="footer-container-text">
+                            we are Middle East based B2B electronic goods distributor with satisfied clientele
+                            world over.
+                        </div>
+                    </div>
+
+                    <!-- QUICK LINKS SECTION-->
+                    <div class="col-lg-4 col-md-4 col-sm-12 text-left">
+                        <p class="footer-container-headings">quisk links</p>
+                        <ul style="list-style: none; padding-left: 0px; ">
+                            <li class="footer-container-quicklinks"><a href="">About</a></li>
+                            <li class="footer-container-quicklinks"><a href="">Career</a></li>
+                            <li class="footer-container-quicklinks"><a href="">Blog</a></li>
+                            <li class="footer-container-quicklinks"><a href="">Products</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- IMPORTANT LINKS SECTION-->
+                    <div class="col-lg-4 col-md-4 col-sm-12 float-lg-left">
+                        <p class="footer-container-headings">IMPORTANT links</p>
+                        <ul style="list-style: none; padding-left: 0px; ">
+                            <li class="footer-container-quicklinks"><a href="">My Account</a></li>
+                            <li class="footer-container-quicklinks"><a href="">Terms & Conditions</a></li>
+                            <li class="footer-container-quicklinks"><a href="">Privacy Policies</a></li>
+                            <li class="footer-container-quicklinks"><a href="">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- Section: Links  -->
+
+            <!-- Section: Social media -->
+            <section class="d-flex justify-content-between p-2 text-white" style="background-color: #16D0B0">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5 text-center" style="font-size:15px;">Copyright ©2020 us | All
+                            Rights Reserved
+                        </div>
+                        <div class="col-md-3 offset-md-4 text-center" style="float: right; font-size: 25px;">
+                            <div>
+                                <a href="" class="text-white me-5">
+                                    <i class="fab fa-facebook-f" style="padding: 0px 10px;"></i>
+                                </a>
+                                <a href="" class="text-white me-4">
+                                    <i class="fab fa-twitter" style="padding: 0px 10px;"></i>
+                                </a>
+                                <a href="" class="text-white me-4">
+                                    <i class="fab fa-youtube" style="padding: 0px 10px;"></i>
+                                </a>
+                                <a href="" class="text-white me-4">
+                                    <i class="fab fa-linkedin" style="padding: 0px 10px;"></i>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Section: Social media -->
+        </footer>
+        <!-- Footer -->
+    </div>
+</body>
+
+</html>

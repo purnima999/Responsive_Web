@@ -1,0 +1,170 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.about-container .container {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.about-container #about-heading {
+    padding: 70px 0px 70px 0px;
+    color: #ffffff;
+    font-family: "Source Sans Pro", Sans-serif;
+    font-size: 60px;
+    font-weight: 700;
+}
+
+
+/* section-2 */
+
+.about-container .about-container-section2 {
+    background-color: white;
+    padding: 30px 0px 36px 0px
+}
+
+.about-container #about-container-section2-details {
+    margin: 0px 30px 0px 30px;
+    padding: 40px
+}
+
+.about-container #about-container-section2-tittle {
+    margin-bottom: 10px;
+    text-align: center;
+    justify-content: center;
+}
+
+.about-container #about-container-section2-tittle p {
+    color: #000000;
+    font-size: 32px;
+    font-weight: 600;
+    font-family: "Rubik", Sans-serif;
+}
+.about-container #about-container-section2-text h6 {
+    margin: 0 0 20px;
+    font-size: 15px;
+    font-weight: 600;
+    display: block;
+    text-align: left;
+}
+
+.about-container #about-container-section2-text p {
+    color: #373636;
+    font-family: "Poppins", Sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: justify;
+    padding-bottom: 4px;
+}
+
+/* section-3 */
+
+.about-container .about-container-section3 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 30px 0px 50px 0px
+}
+
+.about-container .about-container-section3 .row .col {
+    margin: 0px 30px 0px 30px;
+    --e-column-margin-right: 30px;
+    --e-column-margin-left: 30px;
+    padding: 0px 50px 0px 50px;
+}
+
+.about-container #about-container-section3-tittle {
+    margin: 0px 0px 0px 0px;
+    padding: 50px 0px 0px 0px;
+    justify-content: center;
+}
+
+.about-container #about-container-section3-tittle p {
+    margin-bottom: 10px;
+    color: #000000;
+    font-family: "Rubik", Sans-serif;
+    font-size: 36px;
+    font-weight: 500;
+}
+
+.about-container #about-container-section3-text p {
+    margin: 0 0 20px;
+    text-align: justify;
+    color: #373636;
+    font-family: "Poppins", Sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+/* section-4 */
+
+.about-container .about-container-section4 {
+    padding: 10px;
+}
+
+.about-container #section4-tittle {
+    color: #313B3F;
+    font-family: "Rubik", Sans-serif;
+    font-size: 27px;
+    font-weight: 600;
+}
+
+.about-container .about-container-section4 .container-fluid .row {
+    padding: 27px 0px 27px 0px
+}
+
+.about-container .about-container-section4 .container-fluid .row p {
+    color: #313B3F;
+    font-family: "Rubik", Sans-serif;
+    font-size: 19px;
+    font-weight: 400;
+}
+
+.about-container .card-text {
+    font-family: "Rubik", Sans-serif;
+    font-size: 19px;
+    font-weight: 400;
+    margin-bottom: 28px
+}
+
+.about-container .about-container-section4 img {
+    padding: 20px;
+}
+
+.about-container .about-container-section4 .btn {
+    background-color: #40BE74;
+}
+
+.about-container .aboutImg {
+    max-width: 100%;
+    height: auto;
+}
+
+.about-container .about-container-section4 .card {
+    background-color: #ffffff;
+    box-shadow: 5px 10px 18px #f2f2f2
+}
+
+.about-container .about-container-section4 .card:hover>img {
+    transform: rotate(5deg) scale(1);
+    opacity: 0.3;
+    transition-duration: 1s;
+}
+
+.about-container .readmorebtn {
+    padding: 10px 10px 10px 10px;
+    font-family: "Nunito", Sans-serif;
+    font-size: 15px;
+    color: #FFFFFF;
+    background-color: #16D0B0;
+    border-radius: 4px 4px 4px 4px;
+    text-decoration: none;
+}
+
+.about-container .readmorebtn:hover {
+    text-decoration: none;
+    color: white;
+}

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inquiry – Demo</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="/css/inquiry.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <!-- back to top button-start-->
+    <div>
+        <button onclick="topFunction()" id="backtotopbtn" title="Go to top"><i class="fa fa-angle-up"></i></button>
+    </div>
+    <script>
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+    <!-- back to top button-end -->
+
+    <!-- navbar -->
+    <header>
+        <nav class="navigationBar">
+            <div class="content">
+                <div class="logo">
+                    <img src="" alt="logo" />
+                </div>
+                <ul class="menu-list">
+                    <div class="icon" id="backButton">
+                        <i class="fas fa-times">back</i>
+                    </div>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="myAccount.html">My Account</a></li>
+                    <li><a href="inquiry.html">Send Inquiry</a></li>
+                    <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                </ul>
+                <div class="icon menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="icon cancel-btn">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+        </nav>
+
+
+        <script>
+            const body = document.querySelector("body");
+            const navbar = document.querySelector(".navigationBar");
+            const menuBtn = document.querySelector(".menu-btn");
+            const cancelBtn = document.querySelector(".cancel-btn");
+            const backBtn = document.getElementById("backButton");
+            const searchIcon = document.querySelector(".fa-search");
+
+            cancelBtn.classList.add("hide");
+            searchIcon.classList.add("hide");
+            searchIcon.style.display = "none"
+
+            menuBtn.onclick = () => {
+                navbar.classList.add("show");
+                menuBtn.classList.add("hide");
+                body.classList.add("disabled");
+                cancelBtn.classList.add("show");
+            }
+            cancelBtn.onclick = () => {
+                body.classList.remove("disabled");
+                navbar.classList.remove("show");
+                menuBtn.classList.remove("hide");
+                cancelBtn.classList.remove("show")
+            }
+            backBtn.onclick = () => {
+                body.classList.remove("disabled");
+                navbar.classList.remove("show");
+                menuBtn.classList.remove("hide");
+                cancelBtn.classList.remove("show");
+            }
+
+            window.onscroll = () => {
+                this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+                console.log("navbar.classList", navbar)
+            }
+
+        </script>
+    </header>
+
+    <!-- inquiry form -->
+
+    <div class="inquiry-cntainer">
+        <div class="card">
+            <div class="card-body">
+                <div class="row justify-content-center">
+                    <div class="tittle">
+                        Submit Yout inquiry
+                    </div>
+                </div>
+                <form>
+                    <div class="row">
+                        <div class="col-md-4 col-xs-12 col-sm-12">
+                            <div class="form-group">
+                                <label>Name<span>*</span></label>
+                                <input type="text" class="form-control" placeholder="Name">
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-xs-12 col-sm-12">
+                            <div class="form-group">
+                                <label>Email<span>*</span></label>
+                                <input type="email" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="Enter email">
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-xs-12 col-sm-12">
+                            <div class="form-group">
+                                <label>Phone<span>*</span></label>
+                                <input type="text" class="form-control" placeholder="Phone">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 col-xs-12 col-sm-12">
+                            <div class="form-group">
+                                <label>Company<span>*</span></label>
+                                <input type="text" class="form-control" placeholder="Company">
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-xs-12 col-sm-12">
+                            <div class="form-group">
+                                <label>Address<span>*</span></label>
+                                <input type="text" class="form-control" placeholder="Address">
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-xs-12 col-sm-12">
+                            <div class="form-group">
+                                <label>Country<span>*</span></label>
+                                <input type="text" class="form-control" placeholder="Country">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 col-xs-12 col-sm-12">
+                            <div class="form-group">
+                                <label>Part No.<span>*</span></label>
+                                <input type="text" class="form-control" placeholder="Part No">
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-xs-12 col-sm-12">
+                            <div class="form-group">
+                                <label>Description<span>*</span></label>
+                                <input type="text" class="form-control" placeholder="Description">
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-xs-12 col-sm-12">
+                            <div class="form-group">
+                                <label>Quantity<span>*</span></label>
+                                <input type="text" class="form-control" placeholder="Quantity">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-12">
+                        <div class="form-group">
+                            <label>Additional Remarks(Optional)</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                placeholder="Message"></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="submitbtn">Send Now</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer start -->
+
+    <div class="footer-container">
+        <footer class="">
+
+            <!-- Section: Links  -->
+            <!-- About section  -->
+            <section class="container-fluid" id=" footer-container-section-links">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-12 text-center" style="padding: 10px;">
+                        <p class="footer-container-headings">about us</p>
+                        <a class="navbar-brand" href="#">
+                            <img class="footer-logo" src="" alt="logo">
+                        </a>
+                        <div class="footer-container-text">
+                            We are Middle East based electronic goods distributor with satisfied clientele
+                            world over.
+                        </div>
+                    </div>
+
+                    <!-- QUICK LINKS SECTION-->
+                    <div class="col-lg-4 col-md-4 col-sm-12 text-left">
+                        <p class="footer-container-headings">quisk links</p>
+                        <ul style="list-style: none; padding-left: 0px; ">
+                            <li class="footer-container-quicklinks"><a href="">About</a></li>
+                            <li class="footer-container-quicklinks"><a href="">Career</a></li>
+                            <li class="footer-container-quicklinks"><a href="">Blog</a></li>
+                            <li class="footer-container-quicklinks"><a href="">Products</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- IMPORTANT LINKS SECTION-->
+                    <div class="col-lg-4 col-md-4 col-sm-12 float-lg-left">
+                        <p class="footer-container-headings">IMPORTANT links</p>
+                        <ul style="list-style: none; padding-left: 0px; ">
+                            <li class="footer-container-quicklinks"><a href="">My Account</a></li>
+                            <li class="footer-container-quicklinks"><a href="">Terms & Conditions</a></li>
+                            <li class="footer-container-quicklinks"><a href="">Privacy Policies</a></li>
+                            <li class="footer-container-quicklinks"><a href="">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- Section: Links  -->
+
+            <!-- Section: Social media -->
+            <section class="d-flex justify-content-between p-2 text-white" style="background-color: #16D0B0">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5 text-center" style="font-size:15px;">Copyright ©2020 us | All
+                            Rights Reserved
+                        </div>
+                        <div class="col-md-3 offset-md-4 text-center" style="float: right; font-size: 25px;">
+                            <div>
+                                <a href="" class="text-white me-5">
+                                    <i class="fab fa-facebook-f" style="padding: 0px 10px;"></i>
+                                </a>
+                                <a href="" class="text-white me-4">
+                                    <i class="fab fa-twitter" style="padding: 0px 10px;"></i>
+                                </a>
+                                <a href="" class="text-white me-4">
+                                    <i class="fab fa-youtube" style="padding: 0px 10px;"></i>
+                                </a>
+                                <a href="" class="text-white me-4">
+                                    <i class="fab fa-linkedin" style="padding: 0px 10px;"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Section: Social media -->
+        </footer>
+        <!-- Footer -->
+    </div>
+</body>
+
+</html>

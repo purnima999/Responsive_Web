@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/singleblog.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='main.js'></script>
+
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <!-- back to top button-start-->
+    <div>
+        <button onclick="topFunction()" id="backtotopbtn" title="Go to top"><i class="fa fa-angle-up"></i></button>
+    </div>
+    <script>
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+    <!-- back to top button-end -->
+
+    <header>
+        <nav class="navigationBar">
+            <div class="content">
+                <div class="logo">
+                    <img src="" alt="logo" />
+                </div>
+                <ul class="menu-list">
+                    <div class="icon" id="backButton">
+                        <i class="fas fa-times">back</i>
+                    </div>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <!-- <li><a href="myAccount.html">My Account</a></li> -->
+                    <li><a href="inquiry.html">Send inquiry</a></li>
+                    <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                </ul>
+                <div class="icon menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="icon cancel-btn">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+        </nav>
+        <script>
+            const body = document.querySelector("body");
+            const navbar = document.querySelector(".navigationBar");
+            const menuBtn = document.querySelector(".menu-btn");
+            const cancelBtn = document.querySelector(".cancel-btn");
+            const backBtn = document.getElementById("backButton");
+            const searchIcon = document.querySelector(".fa-search");
+
+            cancelBtn.classList.add("hide");
+            searchIcon.classList.add("hide");
+            searchIcon.style.display = "none"
+
+            menuBtn.onclick = () => {
+                navbar.classList.add("show");
+                menuBtn.classList.add("hide");
+                body.classList.add("disabled");
+                cancelBtn.classList.add("show");
+            }
+            cancelBtn.onclick = () => {
+                body.classList.remove("disabled");
+                navbar.classList.remove("show");
+                menuBtn.classList.remove("hide");
+                cancelBtn.classList.remove("show")
+            }
+            backBtn.onclick = () => {
+                body.classList.remove("disabled");
+                navbar.classList.remove("show");
+                menuBtn.classList.remove("hide");
+                cancelBtn.classList.remove("show");
+            }
+
+            window.onscroll = () => {
+                this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+                console.log("navbar.classList", navbar)
+            }
+        </script>
+    </header>
+
+    <!-- single-blog-start -->
+    <div class="single-blog">
+        <div class="container-fluid">
+            <div class="single-blog-tittle">
+                <p style="margin: 0px;">The best Accessories for your Raspberry Pi</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-6 text-right">
+                    <i class="fa fa-clock-o" aria-hidden="true"></i><a href="" class="col-author-link">Demo</a>
+                </div>
+                <div class="col-6" style="padding: 0px;">
+                    <div class="col-6 text-left">
+                        <i class="fa fa-clock-o" aria-hidden="true"></i><a href=""
+                            class="col-author-link1">Demo</a>
+                    </div>
+                </div>
+            </div>
+            <div class="single-blog-text">
+                <p>
+                    In 2017, The MagPi Magazine – the authority Raspberry Pi magazine – reported that over 12.5 million
+                    of the Raspberry Pi single-board PCs (SBCs) had been sold since the 2012 presentation of the primary
+                    form. The Pi has not just shown to be a #1 of specialists,
+                    producers and designers the same, it has even gotten the interest of AI scientists at Microsoft.
+                </p>
+                <p>
+                    Combined with its blast in fame is the rundown of frill that supplement this SBC. Coming up next is
+                    a rundown of suggested extras for you, the Raspberry Pi fan.
+                </p>
+                <p>
+                    If, notwithstanding, you’re not there yet, we can assist you with the beginning. So we should begin
+                    with a pack.
+                </p>
+                <h6> The starter pack for the new Raspberry Pi proprietor </h6>
+                <p>
+                    We suggest Raspberry Pi Foundation’s own starter pack for an overall investigation of the SBC. The
+                    unit incorporates a Raspberry Pi 3 Model B, 8-GB or 16-GB NOOBS SD card, case, a 2.5-A multi-locale
+                    power supply, 1-m HDMI link, optical mouse, and a console
+                    with top-notch scissor-switch activity.
+                </p>
+                <p>
+                    What we truly like about this pack is that it accompanies a duplicate of “Undertakings in Raspberry
+                    Pi.” The writer, Carrie Anne Philbin, guides you through your new SBC obtaining, exhibits how to
+                    compose programs in Scratch and Python, utilizes engineer
+                    devices like Minecraft Pi and Sonic Pi and examines a few first ventures.
+                </p>
+                <p>
+                    Equipped with a Raspberry Pi, now is the ideal time to take a gander at ways you can get the
+                    majority of your SBC – through embellishments and direction.
+                </p>
+                <h6> Raspberry Pi Cookbook </h6>
+                <p>
+                    First up is the book by Simon Monk that goes past the manual in the starter pack to give you north
+                    of 200 recipes or tasks. It will show you how to set up and deal with the board, associate it to an
+                    organization, work with its Linux OS, program in Python,
+                    control other equipment including engines, secure data from sensors and much more. The Raspberry Pi
+                    Cookbook is simply $39.99.
+                </p>
+                <p>
+                    To dive further into the Python programming language, we additionally suggest Python for
+                    Microcontrollers: Getting Started with MicroPython. This book won’t just show you the Pi’s Python
+                    local language yet arm you with eight extra model tasks.
+                </p>
+                <h6>Google AIY Voice Kit for Raspberry Pi</h6>
+                <p>
+                    To rapidly construct an all set venture – in about 90 minutes level – attempt AIY Projects’ Google
+                    AIY Voice Kit. For just $29.99, you can construct yourself your own voice-actuated home right hand.
+                </p>
+                <p>
+                    The pack incorporates a voice Hardware-Attached-on-Top (HAT) embellishment board, voice HAT
+                    mouthpiece board, 3-in. speaker, arcade-style pushbutton, edge and plastic stalemates. You’ll should
+                    simply supply a Raspberry Pi 3 board, a SD card, size “00”
+                    Phillips screwdriver and some Scotch tape.
+                </p>
+                <h6>Happiness Bonnet</h6>
+                <p>
+                    In the event that you are wanting to construct a gaming framework, you’ll require a game regulator.
+                    Adafruit’s Joy Bonnet sits on top of a Pi Zero to empower arcade-like control. For just $15.61, this
+                    deal regulator is a completely collected HAT, and
+                    that implies you don’t have to bind anything. All you want to do is to introduce your content on the
+                    Pi and transfer your emulator, like the RetroPie or the EmulationStation.
+                </p>
+                <p>
+                    You can likewise utilize the Joy Bonnet with Pi A+ or B+/2/3, however it’s the Pi Zero that it fits
+                    the best.
+                </p>
+                <h6>Raspberry Pi Sense HAT</h6>
+                <p>
+                    Prepared to utilize sensors to assemble games, control other equipment or lead science tests? The
+                    Raspberry Pi Sense HAT appends a few on-board sensors on top of the Raspberry Pi by means of the
+                    GPIO pins. It was made for the Astro Pi mission and was
+                    sent off to the International Space Station in December 2015 to perform science tests.
+                </p>
+                <p>
+                    This HAT incorporates a gyro, accelerometer, magnetometer, temperature sensor, barometric tension
+                    sensor and a mugginess sensor. A 8 × 8 RGB LED grid will show information from the sensors, and you
+                    can utilize a five-button joystick to connect with your
+                    task here on Earth.
+                </p>
+                <p>
+                    You can purchase the Sense HAT for $70.39 and download Raspberry Pi Foundation’s Python library here
+                    to control it.
+                </p>
+                <h6>Adafruit 7-in. LCD TFT touchscreen</h6>
+                <p>
+                    Transform the Pi into a tablet with Adafruit’s 7-in. touchscreen, which gives you a 1,024 x 600 goal
+                    that is a decent counterpart for inserted processing needs.
+                </p>
+                <p>
+                    You can drive it over USB and contribution over HDMI. Included is a resistive touchscreen-to-mouse
+                    regulator (AR1100) – a board that handles A/D change – as well as adjustment programming. A wired
+                    PCB with buttons permits you to enter the showcase’s menu
+                    for changing splendor, differentiation and variety.
+                </p>
+                <p>
+                    On the off chance that you are fostering a LED divider show, consider adding an Adafruit RGB Matrix
+                    HAT to make a looking over show utilizing 16 x 32, 32 x 32, and 32 x 64 RGB LED frameworks with
+                    HUB75 associations.
+                </p>
+                <p>
+                    The Pi-Top Laptop For the people who are considering utilizing the Pi a dainty client or more, the
+                    Pi-Top will get you an open-source PC for just $299.99. You’ll get a 14-in. 1080p LCD, complete with
+                    a nook that incorporates a console, trackpad and battery,
+                    a PCB to deal with the associations between the Pi and the remainder of the framework, 8-GB SD card,
+                    links and charger.
+                </p>
+                <p>
+                    What’s best about this Pi-to-Laptop converter is that gathering is pretty much as simple as
+                    “clicking” the provided parts into place.
+                </p>
+                <h6>Pimoroni SkyWriter HAT</h6>
+                <p>
+                    Our last pick is an extra that will acquaint you with the developing signal control market. With the
+                    SkyWriter HAT, you can carry the ability to utilize signals to your Raspberry Pi (Models 3, 2, A+,
+                    B+ and Zero) for just $18.99.
+                </p>
+                <p>
+                    The HAT has an electrical close field 3D/motion sensor that can recognize your developments to the
+                    extent that 5 cm away and can work from behind a non-conductive material-like texture. It tracks
+                    finger developments and signals like tap/twofold tap and
+                    finger flicks.
+                </p>
+                <p>
+                    To get more familiar with these frills and investigate extra choices, go to Arrow.com. On the off
+                    chance that you pick to make a buy and spend more than $20, you’ll appreciate free one-day
+                    transport.
+                </p>
+            </div>
+            <div class="single-blog-articals">
+                <div class="row">
+                    <div style="display:flex" class="single-blog-articals-heading"><i class="fa fa-angle-right"></i>
+                        YOU MIGHT ALSO LIKE</div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 " id="col">
+                        <img class="single-blog-articals-img" src="/images/blog1.jpg" />
+                        <div class="single-blog-articlas-link">
+                            <a href="">AI Is Helping to Improve Your Health While You Sleep</a>
+                        </div>
+                        <h6><i class="fa fa-clock-o" aria-hidden="true"></i>January 15,2022</h6>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" id="col">
+                        <img class="single-blog-articals-img" src="/images/blog2.png" />
+                        <div class="single-blog-articlas-link">
+                            <a href="">AI Is Helping to Improve Your Health While You Sleep</a>
+                        </div>
+                        <h6><i class="fa fa-clock-o" aria-hidden="true"></i>January 15,2022</h6>
+                    </div>
+                    <div class=" col-lg-4 col-md-4 col-sm-12 col-xs-12" id="col">
+                        <img class="single-blog-articals-img" src="/images/blog3.jpg" />
+                        <div class="single-blog-articlas-link">
+                            <a href="">AI Is Helping to Improve Your Health While You Sleep</a>
+                        </div>
+                        <h6><i class="fa fa-clock-o" aria-hidden="true"></i>January 15,2022</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- singleblog end -->
+
+
+    <!-- footer start -->
+
+    <div class="footer-container">
+        <footer class="">
+
+            <!-- Section: Links  -->
+            <!-- About section  -->
+            <section class="container-fluid" id=" footer-container-section-links">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-12 text-center" style="padding: 10px;">
+                        <p class="footer-container-headings">about us</p>
+                        <a class="navbar-brand" href="#">
+                            <img class="footer-logo" src="" alt="logo">
+                        </a>
+                        <div class="footer-container-text">
+                            We are Middle East based electronic goods distributor with satisfied clientele
+                            world over.
+                        </div>
+                    </div>
+
+                    <!-- QUICK LINKS SECTION-->
+                    <div class="col-lg-4 col-md-4 col-sm-12 text-left">
+                        <p class="footer-container-headings">quisk links</p>
+                        <ul style="list-style: none; padding-left: 0px; ">
+                            <li class="footer-container-quicklinks"><a href="">About</a></li>
+                            <li class="footer-container-quicklinks"><a href="">Career</a></li>
+                            <li class="footer-container-quicklinks"><a href="">Blog</a></li>
+                            <li class="footer-container-quicklinks"><a href="">Products</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- IMPORTANT LINKS SECTION-->
+                    <div class="col-lg-4 col-md-4 col-sm-12 float-lg-left">
+                        <p class="footer-container-headings">IMPORTANT links</p>
+                        <ul style="list-style: none; padding-left: 0px; ">
+                            <li class="footer-container-quicklinks"><a href="">My Account</a></li>
+                            <li class="footer-container-quicklinks"><a href="">Terms & Conditions</a></li>
+                            <li class="footer-container-quicklinks"><a href="">Privacy Policies</a></li>
+                            <li class="footer-container-quicklinks"><a href="">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- Section: Links  -->
+
+            <!-- Section: Social media -->
+            <section class="d-flex justify-content-between p-2 text-white" style="background-color: #16D0B0">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5 text-center" style="font-size:15px;">Copyright ©2020 us | All
+                            Rights Reserved
+                        </div>
+                        <div class="col-md-3 offset-md-4 text-center" style="float: right; font-size: 25px;">
+                            <div>
+                                <a href="" class="text-white me-5">
+                                    <i class="fab fa-facebook-f" style="padding: 0px 10px;"></i>
+                                </a>
+                                <a href="" class="text-white me-4">
+                                    <i class="fab fa-twitter" style="padding: 0px 10px;"></i>
+                                </a>
+                                <a href="" class="text-white me-4">
+                                    <i class="fab fa-youtube" style="padding: 0px 10px;"></i>
+                                </a>
+                                <a href="" class="text-white me-4">
+                                    <i class="fab fa-linkedin" style="padding: 0px 10px;"></i>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Section: Social media -->
+        </footer>
+        <!-- Footer -->
+    </div>
+</body>
+
+</html>
